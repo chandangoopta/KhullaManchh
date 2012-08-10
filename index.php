@@ -84,26 +84,16 @@ A sample code which uses OAuth to post a tweet!
 * @license GNU Public License
 */
 
-//$tweet_text = $argv[1];
-//$tweet_text="Test Tweets! 1 2 3 .... ";
-
-//$tweet_text = $_POST["tweet_text"];
-//print "Tweeting...\n";
-//$result = post_tweet($tweet_text);
-//print "Response code: " . $result . "\n";
-//if ($result=="200") echo "you are lovely. Your voice has been posted!";
-//      print "You just tweeted: " . $tweet_text . "\n";}       
- //       else echo "We have tweetwet alot today! Try after few hours!";
 function post_tweet($tweet_text) {
    
   // Use Matt Harris' OAuth library to make the connection
   require_once('tmhoauth/tmhOAuth.php');
     
   $connection = new tmhOAuth(array(
-    'consumer_key' => 'rEvysZPwPiPh0t7SW3sUUQ',
-    'consumer_secret' => '76MpA5KSWYuMhDsEmoVoCGGK7vmkiGO67ZFZylKFo',
-    'user_token' => '741140358-V6EOCWydBqoPRH96heaY6ggpciDFjjFfWRgsOQaU',
-    'user_secret' => '9Jp691Fa68Xx50rfruFqjzRARq5o4oUG25epbCDpaA',
+    'consumer_key' => '*********',
+    'consumer_secret' => '*********',
+    'user_token' => '***********',
+    'user_secret' => '********',
   )); 
   
   // Make the API call
