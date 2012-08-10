@@ -1,4 +1,6 @@
 <?php 
+
+//captcha session
 session_start();
 
 if( isset($_POST['submit'])) {
@@ -6,6 +8,7 @@ if( isset($_POST['submit'])) {
 		// Insert you code for processing the form here, e.g emailing the submission, entering it into a database. 
 $tweet_text = $_POST["tweet_text"];
 //print "Tweeting...\n";
+//Regex Match of any mentions made in tweet text. 
 if (preg_match ("/\@/i", $tweet_text)) {
 	print "you cannot mention anybody in ur tweet!"; }
 else {
@@ -24,27 +27,22 @@ if ($result=="200") echo "you are lovely. Your voice has been posted!";
 }
 ?>
 
-<!--	<form action="form.php" method="post">
-i--> 
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
 </head>
 <body>
-<!--<p> Read this <a href="disclaimer.php"> DISCLAIMER </a> before tweeting!
-<!-- </br>
---> 
 <p><i>Post Your Tweet </i></p>
 <p> Share Something! </p>
  <form action="index.php" method="post"  style="height:100px;width:300px;" accept-charset="ISO-10646" >
   <input type="tweet" name="tweet_text" />
-<!--  <input type="Submit" Name="Tweet!" VALUE = "Tweet">
---></br></br>
+</br></br>
 		<img src="CaptchaSecurityImages.php?width=100&height=40&characters=5" /><br />
 </br></br>		<label for="security_code">Insert Code: </label><input id="security_code" name="security_code" type="text" /><br />
 		<input type="submit" name="submit" value="Submit" />
 	</form>
 </br></br></br></br>
+<!-- Here comes the twitter widget from twitter official. Must be replaced with light one. -->
 <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
 <script>
 new TWTR.Widget({
